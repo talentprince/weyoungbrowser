@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-   Zirco Browser for Android
+   Weyoung Browser for Android
   
-   Copyright (C) 2010 J. Devauchelle and contributors.
+   Copyright (C) 2013 J. Devauchelle and contributors.
  
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License
@@ -16,7 +16,7 @@
  -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.zirco"
+      package="org.weyoung"
       android:installLocation="auto"
       android:versionName="0.4.4" 
       android:versionCode="18">
@@ -59,12 +59,12 @@
 		<activity android:name=".ui.activities.preferences.WeavePreferencesActivity"></activity>
 		<activity android:name=".ui.activities.preferences.WeaveServerPreferenceActivity" android:theme="@android:style/Theme.Dialog" android:label="@string/WeaveServerPreferenceActivity.Title"></activity>
 		
-		<provider android:name=".providers.ZircoBookmarksContentProvider" android:authorities="org.zirco.providers.zircobookmarkscontentprovider"></provider>
-		<provider android:name=".providers.WeaveContentProvider" android:authorities="org.zirco.providers.weavecontentprovider"></provider>
+		<provider android:name=".providers.WeyoungBookmarksContentProvider" android:authorities="org.weyoung.providers.weyoungbookmarkscontentprovider"></provider>
+		<provider android:name=".providers.WeaveContentProvider" android:authorities="org.weyoung.providers.weavecontentprovider"></provider>
 		
 		    
         <receiver
-            android:name="org.zirco.utils.ProxyChangeReceiver">
+            android:name="org.weyoung.utils.ProxyChangeReceiver">
             <intent-filter>
                 <action
                     android:name="android.intent.action.PROXY_CHANGE" />

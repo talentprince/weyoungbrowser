@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 Cyril Mottier (http://www.cyrilmottier.com)
+ * Copyright (C) 2013 Cyril Mottier (http://www.cyrilmottier.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package org.greendroid;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.zirco.R;
+import org.weyoung.R;
 
 import android.content.Context;
 import android.graphics.Color;
