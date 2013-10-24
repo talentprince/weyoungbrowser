@@ -18,7 +18,7 @@
 <resources>        
     <string name="ApplicationName">Weyoung Browser</string>
     <string name="ApplicationNameUrl">Weyoung Browser - %s</string>
-    <string name="ApplicationDescription">使用Weyoung Browser让你更好的使用互联网</string>
+    <string name="ApplicationDescription">使用Weyoung Browser让你更好的使用互联网,Weyoung is based on Zirco!</string>
     
     <string name="AboutActivity.Title">关于</string>
     <string name="AboutActivity.VersionText">Version:</string>
