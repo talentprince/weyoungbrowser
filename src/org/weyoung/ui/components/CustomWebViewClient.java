@@ -155,7 +155,7 @@ public class CustomWebViewClient extends WebViewClient {
             view.loadUrl(newUrl);
             return true;
 
-        } else if (view.getHitTestResult().getType() == HitTestResult.EMAIL_TYPE) {
+        } else if (view.getHitTestResult() != null && view.getHitTestResult().getType() == HitTestResult.EMAIL_TYPE) {
             mMainActivity.onMailTo(url);
             return true;
 

@@ -53,7 +53,7 @@ public class CustomWebView extends WebView {
 
     private static Method mOnPauseMethod = null;
     private static Method mOnResumeMethod = null;
-    private static Method mSetFindIsUp = null;// ��ҳ���ϸ�����ʾ��������
+    private static Method mSetFindIsUp = null;
     private static Method mNotifyFindDialogDismissed = null;
 
     /**
@@ -96,17 +96,14 @@ public class CustomWebView extends WebView {
     public void initializeOptions() {
         WebSettings settings = getSettings();
 
-        // User settings �����Ƿ�֧��javaScript
         settings.setJavaScriptEnabled(Controller
                 .getInstance()
                 .getPreferences()
                 .getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_JAVASCRIPT,
                         true));
-        // �����Ƿ��Զ�����ͼƬ
         settings.setLoadsImagesAutomatically(Controller.getInstance()
                 .getPreferences()
                 .getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_IMAGES, true));
-        // ���ô����ԣ�������������� WebView����Ӧ��Ļ��С ���ô����ԣ�������������š�
         settings.setUseWideViewPort(Controller
                 .getInstance()
                 .getPreferences()
@@ -117,31 +114,26 @@ public class CustomWebView extends WebView {
                 .getPreferences()
                 .getBoolean(Constants.PREFERENCES_BROWSER_LOAD_WITH_OVERVIEW,
                         false));
-        // �Ƿ񱣴�?���
         settings.setSaveFormData(Controller
                 .getInstance()
                 .getPreferences()
                 .getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_FORM_DATA,
                         true));
-        // �Ƿ񱣴�����
         settings.setSavePassword(Controller
                 .getInstance()
                 .getPreferences()
                 .getBoolean(Constants.PREFERENCES_BROWSER_ENABLE_PASSWORDS,
                         true));
-        // �Ƿ�����Ĭ�ϵķŴ���С
         settings.setDefaultZoom(ZoomDensity.valueOf(Controller
                 .getInstance()
                 .getPreferences()
                 .getString(Constants.PREFERENCES_DEFAULT_ZOOM_LEVEL,
                         ZoomDensity.MEDIUM.toString())));
-        // �������������
         settings.setUserAgentString(Controller
                 .getInstance()
                 .getPreferences()
                 .getString(Constants.PREFERENCES_BROWSER_USER_AGENT,
                         Constants.USER_AGENT_DEFAULT));
-        // ���ñ���cookie
         CookieManager.getInstance().setAcceptCookie(
                 Controller
                         .getInstance()
@@ -149,22 +141,11 @@ public class CustomWebView extends WebView {
                         .getBoolean(
                                 Constants.PREFERENCES_BROWSER_ENABLE_COOKIES,
                                 true));
-        // ���ò��
-        if (Build.VERSION.SDK_INT <= 7) {
-            settings.setPluginsEnabled(Controller
-                    .getInstance()
-                    .getPreferences()
-                    .getBoolean(
-                            Constants.PREFERENCES_BROWSER_ENABLE_PLUGINS_ECLAIR,
-                            true));
-        } else {
-            settings.setPluginState(PluginState.valueOf(Controller
-                    .getInstance()
-                    .getPreferences()
-                    .getString(Constants.PREFERENCES_BROWSER_ENABLE_PLUGINS,
-                            PluginState.ON_DEMAND.toString())));
-        }
-        // ֧��˫������
+        settings.setPluginState(PluginState.valueOf(Controller
+                .getInstance()
+                .getPreferences()
+                .getString(Constants.PREFERENCES_BROWSER_ENABLE_PLUGINS,
+                        PluginState.ON_DEMAND.toString())));
         settings.setSupportZoom(true);
 
         if (Controller
